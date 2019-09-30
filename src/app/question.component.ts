@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service';
 
 @Component({
     selector: 'question',
@@ -6,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class QuestionComponent {
 
+    question = {}
+
+    constructor(private api: ApiService) {}
+
     post(question) {
-        console.log(question)
-    }
+        this. api.postQuestion(question)    
+}
 }
