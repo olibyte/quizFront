@@ -1,8 +1,13 @@
 <mat-card>
 <form>
+        <mat-card-content>
     <mat-form-field>
-      <input matInput placeholder="Question">
+      <input [(ngModel)]="question" name="question" matInput placeholder="Question">
     </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button (click)="post(question)" mat-button>POST</button>
+        </mat-card-actions>
   </form>
 </mat-card>
   
