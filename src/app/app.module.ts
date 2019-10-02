@@ -10,11 +10,13 @@ import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.component';
 import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionsComponent } from './questions.component';
+import {MatListModule} from '@angular/material/list';
 
 
 @NgModule({
   declarations: [
-    AppComponent, QuestionComponent
+    AppComponent, QuestionComponent, QuestionsComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     MatInputModule,
     MatCardModule,
-    FormsModule
+    FormsModule,
+    MatListModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
