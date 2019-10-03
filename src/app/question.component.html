@@ -1,4 +1,8 @@
 <mat-card>
+  <mat-card-title>
+    <span *ngIf="question.id">Edit Question</span><!--If in edit mode-->
+    <span *ngIf="!question.id">New Question</span>
+  </mat-card-title>
   <mat-card-content>
     <form>
       <mat-form-field class="fullWidth">
@@ -19,6 +23,9 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button (click)="post(question)" mat-button>POST</button>
+    <button *ngIf="question.id" (click)="null" mat-button>EDIT</button>
+    <button *ngIf="question.id" (click)="question = {}" mat-button>NEW</button>
+    <button *ngIf="!question.id" (click)="post(question)" mat-button>POST</button>
+
   </mat-card-actions>
 </mat-card>
