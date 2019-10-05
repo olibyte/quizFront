@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class QuestionComponent {
 
     question = {}
-    quizId = {}
+    quizId
 
     constructor(private api: ApiService, private route: ActivatedRoute) {}
 

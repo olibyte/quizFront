@@ -13,8 +13,8 @@ export class ApiService {
     quizSelected = this.selectedQuiz.asObservable();
     constructor(private http: HttpClient) { }
 
-    getQuestions() {
-        return this.http.get('https://localhost:44342/api/questions');
+    getQuestions(quizId) {
+        return this.http.get(`https://localhost:44342/api/questions/${quizId}`);
     }
     getQuizzes() {
         return this.http.get('https://localhost:44342/api/quizzes');
