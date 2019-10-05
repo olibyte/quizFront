@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule } from '@angular/material';
+import { MatButtonModule, MatToolbarModule } from '@angular/material';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { QuestionsComponent } from './questions.component';
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home.component';
+import { NavComponent } from './nav.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -23,7 +24,7 @@ const routes = [
 
 @NgModule({
   declarations: [
-    AppComponent, QuestionComponent, QuestionsComponent, HomeComponent
+    AppComponent, QuestionComponent, QuestionsComponent, HomeComponent, NavComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +36,8 @@ const routes = [
     MatInputModule,
     MatCardModule,
     FormsModule,
-    MatListModule
+    MatListModule,
+    MatToolbarModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
