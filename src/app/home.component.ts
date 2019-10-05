@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root', 
-  template: '<question></question><questions></questions>'
+  template: '<quiz></quiz><quizzes></quizzes>'
 })
 export class HomeComponent {
 }

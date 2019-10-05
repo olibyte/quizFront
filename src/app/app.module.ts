@@ -16,18 +16,21 @@ import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home.component';
 import { NavComponent } from './nav.component';
 import { QuizComponent } from './quiz.component';
+import { QuizzesComponent } from './quizzes.component';
 
 const routes = [
   { path: '', component: HomeComponent},
   { path: 'question', component: QuestionComponent},
   { path: 'questions', component: QuestionsComponent},
-  { path: 'quiz', component: QuizComponent}  
+  { path: 'quiz', component: QuizComponent},
+  { path: 'quizzes', component: QuizzesComponent}  
+  
   
 ]
 
 @NgModule({
   declarations: [
-    AppComponent, QuestionComponent, QuestionsComponent, HomeComponent, NavComponent, QuizComponent
+    AppComponent, QuestionComponent, QuestionsComponent, HomeComponent, NavComponent, QuizComponent, QuizzesComponent
   ],
   imports: [
     BrowserModule,
