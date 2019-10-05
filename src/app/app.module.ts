@@ -1,18 +1,19 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatToolbarModule } from '@angular/material';
-import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+
+import { MatButtonModule, MatInputModule, MatListModule, MatCardModule, MatToolbarModule } from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { RouterModule } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { QuestionComponent } from './question.component';
+
 import { ApiService } from './api.service';
 import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { QuestionComponent } from './question.component';
 import { QuestionsComponent } from './questions.component';
-import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './home.component';
 import { NavComponent } from './nav.component';
 import { QuizComponent } from './quiz.component';
@@ -24,13 +25,19 @@ const routes = [
   { path: 'question', component: QuestionComponent},
   { path: 'question/:quizId', component: QuestionComponent},
   { path: 'quiz', component: QuizComponent},
-  { path: 'register', component: RegisterComponent}
-  
+  { path: 'register', component: RegisterComponent} 
 ]
 
 @NgModule({
   declarations: [
-    AppComponent, QuestionComponent, QuestionsComponent, HomeComponent, NavComponent, QuizComponent, QuizzesComponent, RegisterComponent
+    AppComponent, 
+    QuestionComponent, 
+    QuestionsComponent, 
+    HomeComponent, 
+    NavComponent, 
+    QuizComponent, 
+    QuizzesComponent, 
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,12 +45,8 @@ const routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatCardModule,
-    FormsModule,
-    MatListModule,
-    MatToolbarModule
+    MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule,
+    FormsModule, ReactiveFormsModule
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
