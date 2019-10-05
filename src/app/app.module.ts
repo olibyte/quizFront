@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { ApiService } from './api.service';
+import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -48,7 +49,7 @@ const routes = [
     MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule,
     FormsModule, ReactiveFormsModule
   ],
-  providers: [ApiService],
+  providers: [ApiService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
