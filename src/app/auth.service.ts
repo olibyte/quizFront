@@ -6,7 +6,9 @@ import { Router } from '@angular/router';
 export class AuthService {
 
     constructor(private http: HttpClient, private router: Router) { }
-
+    get isAuthenticated() {
+        return !!localStorage.getItem('token');
+    }
     register(credentials) {
         this.http.post<any>(`https://localhost:44342/api/account`, credentials).subscribe(res => {
         this.authenticate(res);    
@@ -21,5 +23,8 @@ export class AuthService {
         localStorage.setItem('token', res);
 
         this.router.navigate(['/']);
+    }
+    logout() {
+        localStorage.removeItem('token');
     }
 }
