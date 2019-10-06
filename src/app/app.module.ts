@@ -2,8 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatInputModule, MatListModule, MatCardModule, MatToolbarModule, MatExpansionModule, MatRadioModule } from '@angular/material';
+import { 
+  MatButtonModule, 
+  MatInputModule, 
+  MatListModule, 
+  MatCardModule, 
+  MatToolbarModule, 
+  MatExpansionModule, 
+  MatRadioModule,
+  MatDialogModule
+} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -24,6 +34,7 @@ import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { PlayComponent } from './play.component';
 import { PlayQuizComponent } from './playQuiz.component';
+import { FinishedComponent } from './finished.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -48,7 +59,8 @@ const routes = [
     RegisterComponent,
     LoginComponent,
     PlayComponent,
-    PlayQuizComponent
+    PlayQuizComponent,
+    FinishedComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +68,7 @@ const routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule, MatExpansionModule, MatRadioModule,
+    MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule, MatExpansionModule, MatRadioModule, MatDialogModule,
     FormsModule, ReactiveFormsModule
   ],
   providers: [ApiService, AuthService, {
@@ -64,6 +76,7 @@ const routes = [
     useClass: AuthInterceptor,
     multi: true
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [FinishedComponent]
 })
 export class AppModule { }
