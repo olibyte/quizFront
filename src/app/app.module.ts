@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MatButtonModule, MatInputModule, MatListModule, MatCardModule, MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatInputModule, MatListModule, MatCardModule, MatToolbarModule, MatExpansionModule, MatRadioModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { RouterModule } from '@angular/router';
@@ -23,6 +23,7 @@ import { QuizzesComponent } from './quizzes.component';
 import { RegisterComponent } from './register.component';
 import { LoginComponent } from './login.component';
 import { PlayComponent } from './play.component';
+import { PlayQuizComponent } from './playQuiz.component';
 
 const routes = [
   { path: '', component: HomeComponent},
@@ -31,7 +32,8 @@ const routes = [
   { path: 'quiz', component: QuizComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'login', component: LoginComponent},
-  { path: 'play', component: PlayComponent}
+  { path: 'play', component: PlayComponent},
+  { path: 'playQuiz/:quizId', component: PlayQuizComponent}
 ]
 
 @NgModule({
@@ -45,7 +47,8 @@ const routes = [
     QuizzesComponent, 
     RegisterComponent,
     LoginComponent,
-    PlayComponent
+    PlayComponent,
+    PlayQuizComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,7 @@ const routes = [
     RouterModule.forRoot(routes),
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule,
+    MatButtonModule, MatInputModule, MatCardModule, MatListModule, MatToolbarModule, MatExpansionModule, MatRadioModule,
     FormsModule, ReactiveFormsModule
   ],
   providers: [ApiService, AuthService, {
